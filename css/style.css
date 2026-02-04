@@ -307,8 +307,8 @@ header {
 /* --- ГЛАВНАЯ: HERO (параллакс, мягкий градиент) --- */
 .hero-section {
     position: relative;
-    height: 550px; 
-    min-height: 500px; 
+    height: 650px; 
+    min-height: 600px; 
     margin-bottom: 0;
 }
 .hero-section {
@@ -1089,6 +1089,7 @@ a:focus-visible, button:focus-visible, .nav-link:focus-visible, .dropdown-item:f
     width: 24px;
     height: 24px;
 }
+
 
 
 
