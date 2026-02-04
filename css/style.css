@@ -318,7 +318,7 @@ header {
     right: 0;
     bottom: 0;
     background: url('../img/hram_baner.jpg')  center top / cover no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-color: #e8e4df;
 }
 .hero-section .hero-overlay {
@@ -1072,6 +1072,7 @@ a:focus-visible, button:focus-visible, .nav-link:focus-visible, .dropdown-item:f
     width: 24px;
     height: 24px;
 }
+
 
 
 
