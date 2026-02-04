@@ -118,17 +118,24 @@
                 </div>
 
                 <h3 class="year-title">2020 год: Освящение главного купола</h3>
-                <div class="history-text">
-                    <p>Важной вехой в завершении внешнего облика храма стало лето 2020 года. 20 июля состоялось знаменательное событие: храм обрёл законченный вид, получив свой центральный купол и крест.</p>
-                </div>
-                <div class="row">
-                <div class="history-img-block">
-                            <div class="col-md-4 mb-3"><img src="img/foto_hrama_krest.jpg" style="height: 300px; width: 100%; object-fit: cover; border-radius: 8px;"></div>
-                            <div class="col-md-4 mb-3"><img src="img/foto_hrama_krest1.jpg" style="height: 300px; width: 100%; object-fit: cover; border-radius: 8px;"></div>
-                            <div class="col-md-4 mb-3"><img src="img/foto_hrama_kupol.jpg" style="height: 300px; width: 100%; object-fit: cover; border-radius: 8px;"></div>
-                    </div>
-                </div>
+         <div class="history-text">
+    <p>Важной вехой в завершении внешнего облика храма стало лето 2020 года. 20 июля состоялось знаменательное событие: храм обрёл законченный вид, получив свой центральный купол и крест.</p>
+</div>
 
+<!-- Обязательно используем класс row, и внутри каждой колонки col-md-4 -->
+<div class="container-fluid px-0">
+    <div class="row g-3"> <!-- g-3 добавит небольшие отступы между фото -->
+        <div class="col-md-4">
+            <img src="img/foto_hrama_krest.jpg" style="width: 100%; height: 280px; object-fit: cover; border-radius: 8px; display: block;">
+        </div>
+        <div class="col-md-4">
+            <img src="img/foto_hrama_krest1.jpg" style="width: 100%; height: 280px; object-fit: cover; border-radius: 8px; display: block;">
+        </div>
+        <div class="col-md-4">
+            <img src="img/foto_hrama_kupol.jpg" style="width: 100%; height: 280px; object-fit: cover; border-radius: 8px; display: block;">
+        </div>
+    </div>
+</div>
                 <h3 class="year-title">2020 год: Освящение звонницы</h3>
                 <div class="history-text">
                     <p>7 декабря 2020 года настоятель храма Иверской иконы Божией Матери г. Липецка протоиерей Василий Бильчук в сослужении духовенства Христо-Рождественского кафедрального собора совершил чин освящения малой звонницы.</p>
@@ -183,6 +190,7 @@
     <script src="js/main.js"></script>
 </body>
 </html>
+
 
 
 
