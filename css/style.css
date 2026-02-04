@@ -1,0 +1,1073 @@
+/* =========================================
+   Храм Иверской иконы — единый файл стилей
+   ========================================= */
+
+:root {
+    --primary-text: #2c2c2c;
+    --accent-gold: #c6a666;
+    --bg-white: #ffffff;
+    --menu-text: #333333;
+    --img-height: 320px;
+    --img-height-lg: 400px;
+    --space-unit: 8px;
+    --radius: 4px;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Lora', serif;
+    --glass-bg: rgba(255, 255, 255, 0.72);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Доступность: ссылка «Перейти к содержанию» */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    padding: 10px 20px;
+    background: var(--accent-gold);
+    color: #fff !important;
+    font-weight: 600;
+    z-index: 10000;
+    transition: top 0.2s;
+}
+.skip-link:focus {
+    top: 20px;
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-white);
+    font-family: var(--font-body);
+    color: var(--primary-text);
+    margin: 0;
+}
+body > main {
+    flex: 1 0 auto;
+}
+
+/* --- ШАПКА И ЛОГОТИП (glass) --- */
+header {
+    padding: 28px 0;
+    background: linear-gradient(180deg, rgba(253, 252, 249, 0.9) 0%, rgba(255, 255, 255, 0.85) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 2px solid var(--accent-gold);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+}
+.logo-area {
+    flex-shrink: 0;
+    padding: 12px;
+    margin-right: 28px;
+    border-radius: 8px;
+    background: rgba(253, 252, 249, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(198, 166, 102, 0.25);
+    box-shadow: 0 2px 12px rgba(198, 166, 102, 0.08), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    transition: box-shadow 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+}
+.logo-area:hover {
+    box-shadow: 0 4px 20px rgba(198, 166, 102, 0.12), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+    border-color: rgba(198, 166, 102, 0.4);
+}
+.logo-img {
+    max-height: 150px;
+    width: auto;
+    display: block;
+    transition: transform 0.35s var(--ease-out);
+}
+.logo-area:hover .logo-img {
+    transform: scale(1.02);
+}
+.church-info {
+    position: relative;
+    padding-left: 24px;
+}
+.church-info::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent-gold) 0%, rgba(198, 166, 102, 0.4) 100%);
+    border-radius: 2px;
+}
+.church-info h1 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #000;
+    line-height: 1.1;
+    border-bottom: 2px solid var(--accent-gold);
+    display: inline-block;
+    padding-bottom: 4px;
+}
+.church-info p {
+    font-size: 1.05rem;
+    color: #555;
+    font-style: italic;
+    margin: 0;
+}
+.church-info .church-sub {
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Правая зона шапки: контакты (оформление как у календаря) */
+.header-right {
+    flex-shrink: 0;
+    margin-left: auto;
+    text-align: right;
+    max-width: 420px;
+    padding-left: 24px;
+}
+.header-contact-block {
+    display: inline-block;
+    text-align: left;
+    padding: 16px 24px 16px 48px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+.header-contact {
+    font-size: 1.15rem;
+    color: var(--primary-text);
+    margin: 0 0 8px;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 0;
+}
+.header-contact:last-child {
+    margin-bottom: 0;
+}
+.header-contact::before {
+    content: '';
+    position: absolute;
+    left: -34px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+}
+.header-contact--address::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c6a666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
+}
+.header-contact--phone::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c6a666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E");
+}
+.header-contact--email::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c6a666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'/%3E%3Cpolyline points='22,6 12,13 2,6'/%3E%3C/svg%3E");
+}
+.header-contact-label {
+    color: var(--accent-gold);
+    font-weight: 600;
+    font-family: var(--font-heading);
+    margin-right: 6px;
+    font-size: 1.08rem;
+}
+.header-right a {
+    color: var(--primary-text);
+    text-decoration: none;
+    transition: color 0.25s var(--ease-out);
+}
+.header-right a:hover {
+    color: var(--accent-gold);
+}
+
+@media (max-width: 991px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .header-right {
+        display: none;
+    }
+    .logo-img {
+        margin-right: 0;
+        margin-bottom: 15px;
+        max-height: 120px;
+    }
+    .church-info h1 {
+        font-size: 1.4rem;
+    }
+    .church-info .church-sub {
+        display: none;
+    }
+}
+
+/* --- МЕНЮ (glass) --- */
+.navbar {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(238, 238, 238, 0.8);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+}
+.navbar .navbar-toggler {
+    border: 2px solid var(--accent-gold);
+    padding: 5px 15px;
+}
+.navbar .navbar-toggler .navbar-toggler-icon {
+    display: none;
+}
+.navbar .navbar-toggler .nav-toggler-text {
+    font-family: var(--font-heading);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: var(--accent-gold);
+}
+.nav-link {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    color: var(--menu-text) !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    margin: 0 8px;
+    transition: color 0.3s;
+}
+.nav-link {
+    border-bottom: 2px solid transparent;
+    transition: color 0.25s var(--ease-out), border-bottom-color 0.25s var(--ease-out);
+}
+.nav-link:hover,
+.nav-link.active,
+.dropdown-item:hover,
+.dropdown-item.active {
+    color: var(--accent-gold) !important;
+    border-bottom-color: var(--accent-gold);
+}
+.dropdown-item {
+    border-bottom: 1px solid transparent;
+    transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
+}
+.dropdown-menu {
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-top: 2px solid var(--accent-gold);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--glass-shadow), 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    margin-top: 0;
+    min-width: 220px;
+    padding: 6px 0 0 0;
+}
+.dropdown-menu .dropdown-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 8px;
+}
+.dropdown-item {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 8px 16px 8px 12px;
+    margin: 0;
+    border-radius: 0;
+}
+.dropdown-item:hover,
+.dropdown-item.active {
+    background-color: rgba(198, 166, 102, 0.12);
+}
+.nav-link:focus-visible,
+.dropdown-item:focus-visible {
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 2px;
+}
+
+/* --- ГЛАВНАЯ: HERO (параллакс, мягкий градиент) --- */
+.hero-section {
+    position: relative;
+    min-height: 380px;
+    margin-bottom: 0;
+}
+.hero-section .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../img/foto_hrama1.png') center/cover no-repeat;
+    background-attachment: fixed;
+    background-color: #e8e4df;
+}
+.hero-section .hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 1.75rem 1rem 2rem;
+    background: linear-gradient(to top,
+        rgba(255,255,255,0.98) 0%,
+        rgba(255,255,255,0.6) 40%,
+        transparent 100%);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    color: #fff;
+    text-align: center;
+}
+.hero-section .hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.2rem, 3vw, 1.75rem);
+    font-weight: 700;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+    margin: 0 0 0.25rem 0;
+    letter-spacing: 0.5px;
+    transition: text-shadow 0.3s var(--ease-out);
+}
+.hero-section .hero-overlay:hover .hero-title {
+    text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+}
+.hero-section .hero-sub {
+    font-size: 0.95rem;
+    opacity: 0.95;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.35);
+    margin: 0;
+}
+@media (max-width: 768px) {
+    .hero-section { min-height: 280px; }
+    .hero-section .hero-bg { background-attachment: scroll; }
+}
+
+/* --- КАРТОЧКИ НОВОСТЕЙ (glass) --- */
+.news-card {
+    display: flex;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    margin-bottom: 24px;
+    align-items: stretch;
+    padding: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    transition: box-shadow 0.35s var(--ease-out), border-color 0.35s var(--ease-out),
+                background 0.35s var(--ease-out), transform 0.35s var(--ease-out);
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+.news-card:hover {
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 12px 36px rgba(198, 166, 102, 0.14), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+    border-color: rgba(198, 166, 102, 0.25);
+    transform: translateY(-2px);
+}
+.news-img-placeholder {
+    width: 42%;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 280px;
+    background-color: #f0ede8;
+    transition: transform 0.5s var(--ease-out);
+}
+.news-card:hover .news-img-placeholder {
+    transform: scale(1.03);
+}
+.news-card:first-child .news-img-placeholder {
+    min-height: 280px;
+}
+.news-content {
+    flex-grow: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+}
+.news-category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.news-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-family: var(--font-heading);
+    text-decoration: none;
+    color: #000;
+    display: block;
+    line-height: 1.2;
+    font-weight: 700;
+    transition: color 0.25s var(--ease-out);
+}
+.news-title:hover {
+    color: var(--accent-gold);
+}
+.btn-read-more {
+    border: 1px solid #ddd;
+    background: transparent;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.25s var(--ease-out), border-color 0.25s var(--ease-out),
+                background 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+    width: fit-content;
+    margin-top: 15px;
+}
+.btn-read-more:hover {
+    border-color: var(--accent-gold);
+    background: var(--accent-gold);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .news-card {
+        flex-direction: column;
+    }
+    .news-img-placeholder {
+        width: 100%;
+        min-height: 220px;
+        height: 220px;
+    }
+    .news-content {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+/* --- САЙДБАР КАЛЕНДАРЬ (glass) --- */
+.sidebar-calendar {
+    background: rgba(250, 248, 245, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-top: 3px solid var(--accent-gold);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    transition: box-shadow 0.3s var(--ease-out);
+}
+.sidebar-calendar:hover {
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.06), 0 1px 0 rgba(255, 255, 255, 0.55) inset;
+}
+.sidebar-calendar h5,
+.sidebar-calendar-title {
+    font-family: var(--font-heading);
+    margin-bottom: 18px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    text-align: center;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 12px;
+}
+.sidebar-calendar-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 85%;
+    max-width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(198, 166, 102, 0.5) 20%,
+        var(--accent-gold) 50%,
+        rgba(198, 166, 102, 0.5) 80%,
+        transparent 100%);
+    border-radius: 1px;
+    box-shadow: 0 0 1px rgba(198, 166, 102, 0.2);
+}
+.sidebar-calendar iframe {
+    border-radius: var(--radius);
+}
+.pravoslavie-calendar-widget {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--primary-text);
+}
+/* Символы (звёздочки и т.п.) в единой структуре, не выделяются */
+.pravoslavie-calendar-widget sup,
+.pravoslavie-calendar-widget sub,
+.pravoslavie-calendar-widget small,
+.pravoslavie-calendar-widget span[style*="vertical-align"],
+.pravoslavie-calendar-widget span[style*="position"] {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    color: inherit !important;
+    vertical-align: baseline !important;
+    line-height: inherit !important;
+    position: static !important;
+}
+/* Отступ после иконы в блоке календаря */
+.pravoslavie-calendar-widget img {
+    margin-right: 1.5rem;
+    margin-bottom: 1rem;
+    vertical-align: top;
+}
+.pravoslavie-calendar-widget a {
+    color: var(--accent-gold);
+    text-decoration: none;
+}
+.pravoslavie-calendar-widget a:hover {
+    text-decoration: underline;
+}
+.pravoslavie-calendar-center {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+/* Отступ между иконой и блоком «Святые дня» */
+.pravoslavie-calendar-center b {
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+/* --- ЗАГОЛОВКИ СТРАНИЦ --- */
+h2, h2.page-title {
+    font-family: var(--font-heading);
+    text-align: center;
+    margin-bottom: 40px;
+    color: #000;
+}
+h2.page-title {
+    border-bottom: 2px solid var(--accent-gold);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+h3.year-title {
+    font-family: var(--font-heading);
+    color: var(--accent-gold);
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* --- ИСТОРИЯ --- */
+.history-text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+.history-img-block {
+    text-align: center;
+    margin: 30px 0;
+    overflow: visible;
+}
+.history-img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: var(--img-height);
+    min-height: 120px;
+    margin: 0 auto 15px;
+    object-fit: contain;
+    background: transparent;
+    cursor: pointer;
+    transition: filter 0.35s var(--ease-out), opacity 0.35s var(--ease-out);
+}
+.history-img:hover {
+    filter: brightness(1.03);
+    opacity: 0.98;
+}
+
+/* --- ГАЛЕРЕЯ (как в истории: единый стиль отображения) --- */
+.gallery-img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: var(--img-height);
+    min-height: 120px;
+    margin: 0 auto 15px;
+    object-fit: contain;
+    background: transparent;
+    cursor: pointer;
+    transition: filter 0.35s var(--ease-out), opacity 0.35s var(--ease-out);
+}
+.gallery-img:hover {
+    filter: brightness(1.03);
+    opacity: 0.98;
+}
+
+/* --- РАСПИСАНИЕ: БЛОК ЧАСОВНИ --- */
+.chapel-notice {
+    border: 2px solid var(--accent-gold);
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #fffdf5;
+}
+.chapel-notice h4 {
+    font-family: var(--font-heading);
+    color: var(--accent-gold);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.chapel-notice .time {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    margin: 20px 0;
+}
+
+/* --- КОНТАКТЫ --- */
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+.contact-label {
+    font-weight: bold;
+    color: #555;
+}
+.vk-link {
+    color: var(--accent-gold);
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
+.vk-link:hover {
+    border-bottom-color: var(--accent-gold);
+}
+
+/* --- ТАБЛИЦА ПОЖЕРТВОВАНИЙ --- */
+.details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.details-table th,
+.details-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+}
+.details-table th {
+    text-align: left;
+    color: #777;
+    width: 30%;
+    font-weight: normal;
+}
+.details-table td {
+    font-weight: 600;
+    color: #000;
+}
+@media (max-width: 768px) {
+    .details-table th,
+    .details-table td {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+    .details-table th {
+        color: var(--accent-gold);
+        font-size: 0.9rem;
+    }
+}
+
+/* --- ДУХОВЕНСТВО --- */
+.cleric-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cleric-photo-wrap {
+    width: 100%;
+    max-width: 300px;
+    min-height: var(--img-height-lg);
+    margin: 0 auto 20px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: transparent;
+    border: 1px solid rgba(198, 166, 102, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cleric-photo-wrap .cleric-photo-fallback {
+    color: var(--accent-gold);
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 1rem;
+}
+.cleric-photo {
+    display: block;
+    width: 100%;
+    height: var(--img-height-lg);
+    min-height: 280px;
+    object-fit: contain;
+    object-position: top center;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.cleric-name {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: #000;
+    margin-bottom: 10px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+.cleric-rank {
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cleric-bio {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+.section-title {
+    text-align: center;
+    font-family: var(--font-heading);
+    margin: 40px 0 30px;
+    color: #2c2c2c;
+    border-bottom: 2px solid var(--accent-gold);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* --- ВОСКРЕСНАЯ ШКОЛА --- */
+/* Воскресная школа: фото как в разделе «История храма» */
+.main-school-img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: var(--img-height);
+    min-height: 120px;
+    margin: 0 auto 15px;
+    object-fit: contain;
+    background: transparent;
+    cursor: pointer;
+}
+.main-school-img:hover { opacity: 0.95; }
+.school-info-card {
+    background: #fffdf5;
+    border: 2px solid var(--accent-gold);
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 50px;
+    border-radius: 4px;
+}
+.school-info-card strong {
+    color: #000;
+    font-size: 1.1rem;
+}
+.event-card {
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 30px;
+}
+.event-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.event-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* --- КНОПКИ (строго в стиле сайта: золотой акцент) --- */
+.btn-telegram,
+.btn-vk,
+a.btn-telegram,
+a.btn-vk {
+    color: #fff !important;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    padding: 12px 28px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-decoration: none !important;
+    display: inline-block;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    border: 2px solid var(--accent-gold);
+    background-color: var(--accent-gold) !important;
+    box-shadow: 0 2px 8px rgba(198, 166, 102, 0.25);
+}
+.btn-telegram:hover,
+.btn-telegram:focus,
+a.btn-telegram:hover,
+a.btn-telegram:focus {
+    background-color: #a68b4a !important;
+    color: #fff !important;
+    border-color: #a68b4a;
+    box-shadow: 0 4px 12px rgba(198, 166, 102, 0.35);
+    outline: none;
+}
+.btn-vk:hover,
+.btn-vk:focus,
+a.btn-vk:hover,
+a.btn-vk:focus {
+    background-color: #a68b4a !important;
+    color: #fff !important;
+    border-color: #a68b4a;
+    box-shadow: 0 4px 12px rgba(198, 166, 102, 0.35);
+    outline: none;
+}
+.btn-outline-primary,
+a.btn-outline-primary {
+    border: 2px solid var(--accent-gold);
+    color: var(--accent-gold) !important;
+    background: transparent !important;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 24px;
+    border-radius: 4px;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.btn-outline-primary:hover,
+a.btn-outline-primary:hover {
+    background-color: var(--accent-gold) !important;
+    color: #fff !important;
+    border-color: var(--accent-gold);
+}
+
+/* --- ПУБЛИКАЦИИ VK --- */
+.vk-container {
+    background: #fff;
+    border: 1px solid #eee;
+    border-top: 4px solid var(--accent-gold);
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin: 0 auto;
+}
+.vk-notice {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+/* --- ФУТЕР (выразительный, без белой полосы внизу) --- */
+footer {
+    flex-shrink: 0;
+    background: linear-gradient(180deg, #f8f6f2 0%, #f0ede8 100%);
+    padding: 56px 0 32px;
+    margin-top: auto;
+    color: var(--primary-text);
+    border-top: 3px solid var(--accent-gold);
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.04);
+}
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    text-align: center;
+}
+.footer-block {
+    min-width: 220px;
+}
+.footer-block h6 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--primary-text);
+    margin-bottom: 16px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--accent-gold);
+    display: inline-block;
+}
+.footer-block a, .footer-block p {
+    color: #444;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    text-decoration: none;
+    margin: 0 0 6px 0;
+    transition: color 0.25s var(--ease-out);
+}
+.footer-block a:hover {
+    color: var(--accent-gold);
+}
+.footer-copy {
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+    padding-top: 28px;
+    margin: 0;
+    border-top: 1px solid rgba(198, 166, 102, 0.35);
+}
+
+/* Lazy loading: плавное появление изображений */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Лайтбокс */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+.lightbox-overlay.is-open {
+    display: flex;
+    opacity: 1;
+}
+.lightbox-img-wrap {
+    max-width: 95%;
+    max-height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lightbox-overlay img {
+    max-width: 100%;
+    max-height: 95vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+.lightbox-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    font-size: 1.75rem;
+    line-height: 1;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10001;
+}
+.lightbox-close:hover {
+    background: rgba(255,255,255,0.25);
+}
+a:focus, button:focus, .nav-link:focus, .dropdown-item:focus, .btn:focus {
+    outline: none;
+}
+a:focus-visible, button:focus-visible, .nav-link:focus-visible, .dropdown-item:focus-visible, .btn:focus-visible {
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 2px;
+}
+.dropdown-item:active {
+    background-color: rgba(198, 166, 102, 0.1);
+    color: var(--accent-gold) !important;
+}
+
+/* Кнопка «Вверх» при прокрутке */
+.scroll-to-top {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 9999;
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    background: rgba(198, 166, 102, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(198, 166, 102, 0.4), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease, background 0.2s ease;
+}
+.scroll-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.scroll-to-top:hover {
+    background: rgba(166, 139, 74, 0.92);
+    color: #fff;
+    box-shadow: 0 6px 24px rgba(198, 166, 102, 0.5), 0 1px 0 rgba(255, 255, 255, 0.35) inset;
+    transform: translateY(0) scale(1.05);
+}
+.scroll-to-top:focus-visible {
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 2px;
+}
+.scroll-to-top svg {
+    display: block;
+    margin: 0 auto;
+    width: 24px;
+    height: 24px;
+}
