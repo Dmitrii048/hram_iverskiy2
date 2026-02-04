@@ -50,50 +50,51 @@
             </div>
         </div>
     </nav>
-    <main id="main-content">
-        <section class="hero-section" aria-label="Главный баннер">
-            <!-- Исправили баннер: высота 500px и позиция по верху -->
-            <div class="hero-bg" style="background-image: url('img/hram_baner.jpg'); background-position: center top; height: 500px; width: 100%; background-size: cover;"></div>
-            <div class="hero-overlay">
-                <p class="hero-title">Добро пожаловать в наш храм</p>
-                <p class="hero-sub">г. Липецк, микрорайон Елецкий</p>
-            </div>
-        </section>
-        <div class="container my-5">
-            <div class="row">
-                <div class="col-lg-8">
-                    <!-- Первая новость: ЛОГОТИП -->
-                    <div class="news-card">
-                        <div class="news-img-placeholder" style="background-image: url('img/logo.jpg'); background-size: contain; background-color: #fff;"></div>
-                        <div class="news-content">
-                            <div class="news-category">Новости / События</div>
-                            <a href="about.html" class="news-title">Добро пожаловать на обновлённый сайт храма</a>
-                            <p>Приветствуем вас на официальном сайте прихода храма Иверской иконы Божией Матери в городе Липецке.</p>
-                            <a href="about.html" class="btn-read-more">ЧИТАТЬ ДАЛЕЕ</a>
-                        </div>
-                    </div>
-                    <!-- Вторая новость: РАСПИСАНИЕ -->
-                    <div class="news-card">
-                        <div class="news-img-placeholder" style="background-image: url('img/hram_raspisanie%20(2).jpg');"></div>
-                        <div class="news-content">
-                            <div class="news-category">Богослужения</div>
-                            <a href="schedule.html" class="news-title">Расписание на текущий месяц</a>
-                            <p>Ознакомьтесь с графиком богослужений в нашем храме. Службы совершаются регулярно.</p>
-                            <a href="schedule.html" class="btn-read-more">СМОТРЕТЬ РАСПИСАНИЕ</a>
-                        </div>
+<main id="main-content">
+    <section class="hero-section" aria-label="Главный баннер" style="position: relative; height: 500px; overflow: hidden;">
+        <!-- Баннер -->
+        <div class="hero-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('img/hram_baner.jpg'); background-size: cover; background-position: center top; z-index: 1;"></div>
+        <div class="hero-overlay">
+            <p class="hero-title">Добро пожаловать в наш храм</p>
+            <p class="hero-sub">г. Липецк, микрорайон Елецкий</p>
+        </div>
+    </section>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Новость 1: Логотип -->
+                <div class="news-card">
+                    <div class="news-img-placeholder" style="background-image: url('img/logo.jpg'); background-size: contain; background-repeat: no-repeat; background-position: center; background-color: #fff;"></div>
+                    <div class="news-content">
+                        <div class="news-category">Новости / События</div>
+                        <a href="about.html" class="news-title">Добро пожаловать на обновлённый сайт храма</a>
+                        <p>Приветствуем вас на официальном сайте прихода храма Иверской иконы Божией Матери в городе Липецке.</p>
+                        <a href="about.html" class="btn-read-more">ЧИТАТЬ ДАЛЕЕ</a>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="sidebar-calendar">
-                        <h5 class="sidebar-calendar-title">Православный календарь</h5>
-                        <div class="pravoslavie-calendar-widget">
-                            <script src="https://script.pravoslavie.ru/calendar.php?advanced=1&dayicon=1&bold=1&tipikon=1&para=1&icon=1&target=1&name=1"></script>
-                        </div>
+                <!-- Новость 2: Расписание -->
+                <div class="news-card">
+                    <div class="news-img-placeholder" style="background-image: url('img/hram_raspisanie (2).jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="news-content">
+                        <div class="news-category">Богослужения</div>
+                        <a href="schedule.html" class="news-title">Расписание на текущий месяц</a>
+                        <p>Ознакомьтесь с графиком богослужений в нашем храме. Службы совершаются регулярно.</p>
+                        <a href="schedule.html" class="btn-read-more">СМОТРЕТЬ РАСПИСАНИЕ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="sidebar-calendar">
+                    <h5 class="sidebar-calendar-title">Православный календарь</h5>
+                    <div class="pravoslavie-calendar-widget">
+                        <script src="https://script.pravoslavie.ru/calendar.php?advanced=1&dayicon=1&bold=1&tipikon=1&para=1&icon=1&target=1&name=1"></script>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+</main>
     <footer>
         <div class="container text-center">
             <p>© 2026 Приход храма Иверской иконы Божией Матери г. Липецка.</p>
@@ -102,3 +103,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
