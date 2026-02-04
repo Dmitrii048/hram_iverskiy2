@@ -313,8 +313,8 @@ header {
 }
 .hero-section {
     position: relative;
-    height: 600px !important; 
-    min-height: 500px !important;
+    height: 700px !important; 
+    min-height: 600px !important;
     overflow: hidden;
 }
 
@@ -322,20 +322,10 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../img/hram_baner.jpg') !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    
-    /* ВОЗВРАЩАЕМ ЭФФЕКТ ДВИЖЕНИЯ */
-    background-attachment: fixed !important; 
-    
-    /* КОРРЕКТИРУЕМ ПОЗИЦИЮ: 
-       center 0 заставит картинку начинаться от самого верха окна браузера */
-    background-position: center 0px !important; 
-    
-    z-index: 1;
+    right: 0;
+    bottom: 0;
+    background: url('../img/hram_baner.jpg')  center top / cover no-repeat;
+    background-attachment: scroll;
     background-color: #e8e4df;
 }
 .hero-section .hero-overlay {
@@ -1089,6 +1079,7 @@ a:focus-visible, button:focus-visible, .nav-link:focus-visible, .dropdown-item:f
     width: 24px;
     height: 24px;
 }
+
 
 
 
