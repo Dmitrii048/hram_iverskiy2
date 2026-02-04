@@ -55,9 +55,9 @@
             </div>
         </div>
     </nav>
-    <main id="main-content">
+    <main id="main-content"> <!-- Исправили: добавили открывающую скобку < -->
         <section class="hero-section" aria-label="Главный баннер">
-            <div class="hero-bg" role="img" aria-hidden="true"></div>
+            <div class="hero-bg" style="background-image: url('img/hram_baner.jpg'); background-position: center top;"></div>
             <div class="hero-overlay">
                 <p class="hero-title">Добро пожаловать в наш храм</p>
                 <p class="hero-sub">г. Липецк, микрорайон Елецкий</p>
@@ -67,7 +67,8 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="news-card">
-                        <div class="news-img-placeholder" style="background-image: url('img/foto_hrama2.jpg');"></div>
+                        <!-- Заменили на logo.jpg, добавили стиль чтобы не обрезалось -->
+                        <div class="news-img-placeholder" style="background-image: url('img/logo.jpg'); background-size: contain; background-color: #fff;"></div>
                         <div class="news-content">
                             <div class="news-category">Новости / События</div>
                             <a href="about.html" class="news-title">Добро пожаловать на обновлённый сайт храма</a>
@@ -76,7 +77,8 @@
                         </div>
                     </div>
                     <div class="news-card">
-                        <div class="news-img-placeholder" style="background-image: url('img/foto_hrama1.png');"></div>
+                        <!-- Заменили на hram_raspisanie (2).jpg -->
+                        <div class="news-img-placeholder" style="background-image: url('img/hram_raspisanie%20(2).jpg');"></div>
                         <div class="news-content">
                             <div class="news-category">Богослужения</div>
                             <a href="schedule.html" class="news-title">Расписание на текущий месяц</a>
@@ -122,3 +124,4 @@
     <script src="js/main.js"></script>
 </body>
 </html>
+
