@@ -3,139 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Храм Иверской иконы Божией Матери г. Липецк</title>
-    <meta name="description" content="Официальный сайт прихода храма Иверской иконы Божией Матери в городе Липецке. Расписание богослужений, новости, история.">
-    
-    <!-- Настройки Open Graph для соцсетей (WhatsApp, Telegram, ВК) -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Храм Иверской иконы Божией Матери г. Липецк">
-    <meta property="og:description" content="Официальный сайт прихода в микрорайоне Елецкий. Расписание богослужений, новости и жизнь общины.">
-    <meta property="og:url" content="https://xn----8sbemnchgw8aeh0d.xn--p1ai/">
-    <meta property="og:image" content="https://xn----8sbemnchgw8aeh0d.xn--p1ai/img/hram_baner.jpg">
-    <meta property="og:site_name" content="Иверский храм Липецк">
-    <meta property="og:locale" content="ru_RU">
-
-    <link rel="icon" type="image/png" href="img/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <title>Кафедральный собор Рождества Христова | Липецк</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <a href="#main-content" class="skip-link">Перейти к содержанию</a>
-    <header>
-        <div class="container">
-            <div class="header-container">
-                <div class="logo-area"><img src="img/logo.png" alt="Логотип" class="logo-img"></div>
-                <div class="church-info">
-                    <h1>Храм Иверской иконы <br>Божией Матери</h1>
-                    <p>г. Липецк, микрорайон Елецкий</p>
-                    <p class="church-sub">Московский Патриархат, Липецкая митрополия</p>
-                </div>
-                <div class="header-right">
-                    <div class="header-contact-block">
-                        <p class="header-contact header-contact--address"><span class="header-contact-label">Адрес:</span> г. Липецк, ул. Артемова, 8</p>
-                        <p class="header-contact header-contact--phone"><span class="header-contact-label">Тел.:</span> <a href="tel:+79205070706">+7 (920) 507-07-06</a></p>
-                        <p class="header-contact header-contact--email"><span class="header-contact-label">Почта:</span> <a href="mailto:iversky48@yandex.ru">iversky48@yandex.ru</a></p>
-                    </div>
-                </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="contact-info">
+                <span><i class="fas fa-map-marker-alt"></i> г. Липецк, Соборная площадь, 4</span>
+                <span><i class="fas fa-phone"></i> +7 (4742) 27-04-78</span>
+            </div>
+            <div class="social-links">
+                <a href="https://vk.com/sobor48" target="_blank"><i class="fab fa-vk"></i></a>
             </div>
         </div>
-    </header>
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container justify-content-center">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Открыть меню">
-                <span class="nav-toggler-text">Меню</span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="about.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">О Храме</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="about.html">История храма</a></li>
-                            <li><a class="dropdown-item" href="clergy.html">Духовенство</a></li>
-                            <li><a class="dropdown-item" href="school.html">Воскресная школа</a></li>
+    </div>
+
+    <!-- Header (КОПИРУЙ ЭТОТ HEADER НА ВСЕ СТРАНИЦЫ ДЛЯ ОДИНАКОВОГО МЕНЮ!) -->
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="Логотип" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-title">Христорождественский</span>
+                    <span class="logo-subtitle">Кафедральный собор</span>
+                </div>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li class="has-dropdown">
+                        <a href="about.html">О Соборе <i class="fas fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html">История (Летопись)</a></li>
+                            <li><a href="ministry.html">Наше служение</a></li>
+                            <li><a href="architecture.html">Архитектура</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="donations.html">Пожертвования</a></li>
-                    <li class="nav-item"><a class="nav-link" href="schedule.html">Расписание Богослужений</a></li>
-                    <li class="nav-item"><a class="nav-link" href="publications.html">Публикации</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                    <li><a href="schedule.html">Богослужения</a></li>
+                    <li><a href="#">Духовенство</a></li>
+                    <li><a href="#">Контакты</a></li>
                 </ul>
-            </div>
+            </nav>
+            <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
         </div>
-    </nav>
-    <main id="main-content">
-        <section class="hero-section" aria-label="Главный баннер">
-            <div class="hero-bg" role="img" aria-hidden="true"></div>
-            <div class="hero-overlay">
-                <p class="hero-title">Добро пожаловать в наш храм</p>
-                <p class="hero-sub">г. Липецк, микрорайон Елецкий</p>
-            </div>
-        </section>
-        <div class="container my-5">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="news-card">
-                        <div class="news-img-placeholder" style="background-image: url('img/logo.png');"></div>
-                        <div class="news-content">
-                            <div class="news-category">Новости / События</div>
-                            <a href="about.html" class="news-title">Добро пожаловать на обновлённый сайт храма</a>
-                            <p>Приветствуем вас на официальном сайте прихода храма Иверской иконы Божией Матери в городе Липецке.</p>
-                            <a href="about.html" class="btn-read-more">ЧИТАТЬ ДАЛЕЕ</a>
-                        </div>
-                    </div>
-                    <div class="news-card">
-                        <div class="news-img-placeholder" style="background-image: url('img/hramraspisanie.jpg');"></div>
-                        <div class="news-content">
-                            <div class="news-category">Богослужения</div>
-                            <a href="schedule.html" class="news-title">Расписание на текущий месяц</a>
-                            <p>Ознакомьтесь с графиком богослужений в нашем храме. Службы совершаются регулярно.</p>
-                            <a href="schedule.html" class="btn-read-more">СМОТРЕТЬ РАСПИСАНИЕ</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="sidebar-calendar">
-                        <h5 class="sidebar-calendar-title">Православный календарь</h5>
-                        <div class="pravoslavie-calendar-widget">
-                            <script src="https://script.pravoslavie.ru/calendar.php?advanced=1&dayicon=1&bold=1&tipikon=1&para=1&icon=1&target=1&name=1"></script>
-                            <script>print_holiday();</script>
-                            <p class="pravoslavie-calendar-center">
-                                <b><script>print_day()</script></b><br>
-                                <script>print_week()</script>
-                                <script>print_post()</script><br>
-                                <i><script>print_trapeza();</script></i><br><br>
-                                <script>print_icon()</script><br>
-                                <b>Святые дня: </b>
-                                <script>print_saints()</script><br><br>
-                                <b>Евангельские Чтения: </b><br>
-                                <script>print_chten()</script>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="fade-in">Духовное сердце Липецка</h1>
+            <p>Место молитвы, истории и утешения с 1791 года</p>
         </div>
-    </main>
-    <footer>
+    </section>
+
+    <!-- 2. Блок: Службы и Календарь -->
+    <section class="schedule-preview-section">
         <div class="container">
-            <div class="footer-inner">
-                <div class="footer-block"><h6>Навигация</h6><p><a href="about.html">О храме</a></p><p><a href="schedule.html">Расписание</a></p><p><a href="contacts.html">Контакты</a></p></div>
-                <div class="footer-block"><h6>Контакты</h6><p>ул. Артемова, д. 8</p><p><a href="tel:+79205070706">+7 (920) 507-07-06</a></p><p><a href="mailto:iversky48@yandex.ru">iversky48@yandex.ru</a></p></div>
-                <div class="footer-block"><h6>Мы в соцсетях</h6><p><a href="https://t.me/iverskij" target="_blank" rel="noopener">Telegram</a></p><p><a href="https://vk.com/iverskiichram" target="_blank" rel="noopener">ВКонтакте</a></p></div>
+            <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+                
+                <!-- Текст слева -->
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--deep-brown); margin-bottom: 20px;">Богослужения совершаются ежедневно</h2>
+                    <p style="margin-bottom: 30px; font-size: 1.1rem; color: #555;">
+                        Двери собора открыты для каждого. Утром совершается Божественная Литургия, вечером — вечернее богослужение.
+                    </p>
+                    <a href="schedule.html" class="btn-gold">Смотреть полное расписание</a>
+                </div>
+
+                <!-- Календарь справа (Оформленный в карточку) -->
+                <div style="flex: 1; min-width: 300px;">
+                    <div class="calendar-widget">
+                        <h4 style="color:var(--gold-dark); margin-bottom:15px; font-size:1.2rem;">Православный календарь</h4>
+                        <!-- Вставка скрипта Православие.ру -->
+                        <div style="font-size: 0.95rem; line-height: 1.5;">
+                            <script src="https://script.pravoslavie.ru/calendar.php?advanced=1&dayicon=1&bold=1&tipikon=0&para=0&icon=0&target=1&name=1"></script>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <p class="footer-copy">© <span id="current-year"></span> Приход храма Иверской иконы Божией Матери г. Липецка.</p>
+        </div>
+    </section>
+
+    <!-- 3. Блок: Таймлайн (История) -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">Вехи Истории</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="time-date">1791 год</span>
+                    <div class="time-content">
+                        Начало строительства каменного собора по указу Императрицы Екатерины II.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="time-date">1835 год</span>
+                    <div class="time-content">
+                        Завершено строительство величественной 60-метровой колокольни.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="time-date">1931 год</span>
+                    <div class="time-content">
+                        Трагические страницы: закрытие храма, разорение святынь.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="time-date">1991 год</span>
+                    <div class="time-content">
+                        Возвращение святыни верующим и начало возрождения.
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="about.html" class="btn-chronicle">Читать полную летопись</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Блок: Духовенство и Жизнь (Тизер) -->
+    <section style="padding: 80px 0; background: url('architecture-bg.jpg') fixed center/cover; position: relative;">
+        <div style="position: absolute; top:0; left:0; right:0; bottom:0; background: rgba(62,47,38,0.8);"></div>
+        <div class="container" style="position: relative; z-index: 2; text-align: center; color: #fff;">
+            <h2 style="font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 20px;">Больше, чем просто храм</h2>
+            <p style="max-width: 700px; margin: 0 auto 40px; font-size: 1.2rem;">
+                Наши пастыри несут активное служение не только в соборе, но и окормляют студентов ЛГПУ и сотрудников УВД. Жизнь прихода наполнена событиями.
+            </p>
+            <a href="ministry.html" class="btn-outline">Узнать о нашем служении</a>
+        </div>
+    </section>
+
+    <!-- 5. Блок: Соцсети (Как мы делали) -->
+    <section style="padding: 60px 0; background: var(--white);">
+        <div class="container">
+            <h2 class="section-title">Живая жизнь прихода</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+                <!-- Telegram -->
+                <a href="https://t.me/Lsobor" target="_blank" style="flex:1; min-width:280px; max-width:400px;">
+                    <div style="background:#F5F9FC; padding:30px; border:2px solid #2AABEE; border-radius:8px; text-align:center;">
+                        <i class="fab fa-telegram-plane" style="font-size:40px; color:#2AABEE; margin-bottom:15px;"></i>
+                        <h3 style="color:#2AABEE; margin:0;">Telegram @Lsobor</h3>
+                    </div>
+                </a>
+                <!-- VK -->
+                <a href="https://vk.com/sobor48" target="_blank" style="flex:1; min-width:280px; max-width:400px;">
+                    <div style="background:#F2F7FD; padding:30px; border:2px solid #0077FF; border-radius:8px; text-align:center;">
+                        <i class="fab fa-vk" style="font-size:40px; color:#0077FF; margin-bottom:15px;"></i>
+                        <h3 style="color:#0077FF; margin:0;">ВКонтакте</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--deep-brown); color: #bbb; padding: 40px 0; font-size: 0.9rem;">
+        <div class="container" style="text-align: center;">
+            <p style="color: #fff; font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 20px;">Христорождественский кафедральный собор</p>
+            <p>г. Липецк, Соборная площадь, 4</p>
+            <p style="margin-top: 20px;">© 2024 Все права защищены</p>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+
 </body>
 </html>
-
-
-
-
-
-
