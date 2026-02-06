@@ -11,23 +11,31 @@
 </head>
 <body>
     <a href="#main-content" class="skip-link">Перейти к содержанию</a>
-    <header>
-        <div class="container">
-            <div class="header-container">
-                <div class="logo-area"><img src="img/logo.png" alt="Логотип" class="logo-img"></div>
-                <div class="church-info">
-                    <h1>Храм Иверской иконы <br>Божией Матери</h1>
-                    <p>г. Липецк, микрорайон Елецкий</p>
-                    <p class="church-sub">Московский Патриархат, Липецкая митрополия</p>
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="Логотип" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-title">Христорождественский</span>
+                    <span class="logo-subtitle">Кафедральный собор</span>
                 </div>
-                <div class="header-right">
-                    <div class="header-contact-block">
-                        <p class="header-contact header-contact--address"><span class="header-contact-label">Адрес:</span> г. Липецк, ул. Артемова, 8</p>
-                        <p class="header-contact header-contact--phone"><span class="header-contact-label">Тел.:</span> <a href="tel:+79205070706">+7 (920) 507-07-06</a></p>
-                        <p class="header-contact header-contact--email"><span class="header-contact-label">Почта:</span> <a href="mailto:iversky48@yandex.ru">iversky48@yandex.ru</a></p>
-                    </div>
-                </div>
-            </div>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li class="has-dropdown">
+                        <a href="about.html">О Соборе <i class="fas fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html">История (Летопись)</a></li>
+                            <li><a href="ministry.html">Наше служение</a></li>
+                            <li><a href="architecture.html">Архитектура</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="schedule.html">Богослужения</a></li>
+                    <li><a href="#">Духовенство</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
         </div>
     </header>
     <nav class="navbar navbar-expand-lg sticky-top">
@@ -190,6 +198,7 @@
     <script src="js/main.js"></script>
 </body>
 </html>
+
 
 
 
