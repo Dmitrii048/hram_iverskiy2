@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <!-- Подключаем стили для галереи (Fancybox) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Перейти к содержанию</a>
@@ -66,7 +68,9 @@
                 </div>
                 
                 <div class="history-img-block">
-                    <img src="img/ikona_iverskaya.png" alt="Иверская икона" class="history-img">
+                    <a href="img/ikona_iverskaya.png" data-fancybox="gallery" data-caption="Иверская икона Божией Матери">
+                        <img src="img/ikona_iverskaya.png" alt="Иверская икона" class="history-img">
+                    </a>
                 </div>
 
                 <div class="history-text">
@@ -74,7 +78,9 @@
                 </div>
                 
                 <div class="history-img-block">
-                    <img src="img/hram_baner.jpg" alt="Вид храма" class="history-img">
+                    <a href="img/hram_baner.jpg" data-fancybox="gallery" data-caption="Вид храма">
+                        <img src="img/hram_baner.jpg" alt="Вид храма" class="history-img">
+                    </a>
                 </div>
 
                 <div class="history-text">
@@ -88,101 +94,138 @@
                 </div>
 
                 <div class="history-img-block">
-                    <img src="img/hramraspisanie.jpg" alt="Внутреннее убранство" class="history-img">
+                    <a href="img/hramraspisanie.jpg" data-fancybox="gallery" data-caption="Внутреннее убранство">
+                        <img src="img/hramraspisanie.jpg" alt="Внутреннее убранство" class="history-img">
+                    </a>
                 </div>
 
                 <!-- ЛЕТОПИСЬ -->
                 <div class="text-center mt-5"><h2 class="page-title">Летопись строительства храма</h2></div>
 
+                <!-- 2014 ЗАКЛАДКА -->
                 <h3 class="year-title">2014 год: Закладка и начало строительства</h3>
                 <div class="history-text">
-                    <p>Официальная история прихода берет свое начало 14 октября 2014 года. Дата была выбрана неслучайно, ведь на этот день приходится праздник Покрова Пресвятой Богородицы, один из самых почитаемых церковных праздников на Руси, начало празднования которого уходит в XII век и связано с именем благоверного князя Андрея Боголюбского, сына Юрия Долгорукого. Покров Богородицы символизирует небесную защиту Царицы Небесной над каждым домом и храмом.</p>
+                    <p>Официальная история прихода берет свое начало 14 октября 2014 года. Дата была выбрана неслучайно, ведь на этот день приходится праздник Покрова Пресвятой Богородицы, один из самых почитаемых церковных праздников на Руси. Покров Богородицы символизирует небесную защиту Царицы Небесной над каждым домом и храмом.</p>
                     <p>В этот день в строящемся микрорайоне «Елецкий» состоялся торжественный чин закладки камня в основание будущего храма.</p>
                 </div>
                 <div class="history-img-block">
-                    <img src="img/foto_hrama_zakladka.jpg" alt="Закладка камня" class="history-img">
+                    <a href="img/foto_hrama_zakladka.jpg" data-fancybox="gallery" data-caption="Закладка камня (2014 год)">
+                        <img src="img/foto_hrama_zakladka.jpg" alt="Закладка камня" class="history-img">
+                    </a>
                 </div>
-    
-    <h3 class="year-title">2015 год: Открытие храма-часовни</h3>
-    
-    <div class="history-text">
-        <p>
-            В рождественскую ночь состоялось историческое событие для нашего прихода — <strong>первое богослужение в храме-часовне</strong> в честь Елецкой иконы Божией Матери микрорайона «Елецкий» города Липецка.
-        </p>
-        <p>
-            С этого момента, параллельно со строительством основного комплекса, в часовне началась регулярная литургическая жизнь.
-        </p>
-    </div>
 
-    <div class="history-img-block">
-        <!-- Ваше новое фото -->
-        <img src="img/chasovnya.jpg" alt="Храм-часовня Елецкой иконы Божией Матери" class="history-img">
-    </div>
-</div>
+                <!-- ВСТАВКА ПРО ЧАСОВНЮ -->
+                <div style="margin: 40px 0; border-top: 1px solid #dee2e6; padding-top: 20px;">
+                    <h3 class="year-title" style="margin-top: 0;">2015 год: Открытие храма-часовни</h3>
+                    <div class="history-text">
+                        <p>В рождественскую ночь состоялось историческое событие — <strong>первое богослужение во временном храме-часовне</strong> в честь Елецкой иконы Божией Матери микрорайона «Елецкий» города Липецка.</p>
+                        <p>С этого момента, параллельно со строительством основного комплекса, в часовне началась регулярная литургическая жизнь.</p>
+                    </div>
+                    <div class="history-img-block">
+                        <a href="img/chasovnya.jpg" data-fancybox="gallery" data-caption="Храм-часовня Елецкой иконы Божией Матери">
+                            <img src="img/chasovnya.jpg" alt="Храм-часовня Елецкой иконы Божией Матери" class="history-img">
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 2015 НАСТОЯТЕЛЬ -->
                 <h3 class="year-title">2015 год: Назначение настоятеля</h3>
                 <div class="history-text">
                     <p>Период административного становления и назначение настоятеля. После завершения этапа закладки возникла необходимость в постоянном пастырском попечении и административном руководстве строительством.</p>
-                    <p>Ключевым событием 2015 года стало назначение настоятеля. Согласно Указу от 6 августа 2015 года № 38, подписанному Его Высокопреосвященством митрополитом Липецким и Задонским Никоном, настоятелем Прихода храма Иверской иконы Божией Матери был назначен протоиерей Василий Алексеевич Бильчук.</p>
+                    <p>Ключевым событием 2015 года стало назначение настоятеля. Согласно Указу от 6 августа 2015 года № 38, настоятелем Прихода храма Иверской иконы Божией Матери был назначен протоиерей Василий Алексеевич Бильчук.</p>
                 </div>
 
+                <!-- 2019 ПЕРВЫЙ КУПОЛ -->
                 <h3 class="year-title">2019 год: Установка первого купола</h3>
                 <div class="history-text">
                     <p>6 марта 2019 года произошло важное событие в архитектурном становлении храма: здание обрело свою первую малую главу. Чин освящения купола и креста совершил Преосвященнейший Евфимий, епископ Усманский.</p>
                 </div>
                 <div class="history-img-block">
-                     <img src="img/Foto_1_kupola.jpg" class="history-img">
+                     <a href="img/Foto_1_kupola.jpg" data-fancybox="gallery" data-caption="Установка первого купола">
+                        <img src="img/Foto_1_kupola.jpg" class="history-img">
+                     </a>
                 </div>
 
+                <!-- 2020 ГЛАВНЫЙ КУПОЛ -->
                 <h3 class="year-title">2020 год: Освящение главного купола</h3>
-         <div class="history-text">
-    <p>Важной вехой в завершении внешнего облика храма стало лето 2020 года. 20 июля состоялось знаменательное событие: храм обрёл законченный вид, получив свой центральный купол и крест.</p>
-</div>
+                <div class="history-text">
+                    <p>Важной вехой в завершении внешнего облика храма стало лето 2020 года. 20 июля состоялось знаменательное событие: храм обрёл законченный вид, получив свой центральный купол и крест.</p>
+                </div>
 
-<!-- Обязательно используем класс row, и внутри каждой колонки col-md-4 -->
-<div class="container-fluid px-0">
-    <div class="row g-3"> <!-- g-3 добавит небольшие отступы между фото -->
-        <div class="col-md-4">
-            <img src="img/foto_hrama_krest.jpg" style="width: 100%; height: 280px; object-fit: cover; border-radius: 8px; display: block;">
-        </div>
-        <div class="col-md-4">
-            <img src="img/foto_hrama_krest1.jpg" style="width: 100%; height: 280px; object-fit: cover; border-radius: 8px; display: block;">
-        </div>
-        <div class="col-md-4">
-            <img src="img/foto_hrama_kupol.jpg" style="width: 100%; height: 280px; object-fit: cover; border-radius: 8px; display: block;">
-        </div>
-    </div>
-</div>
+                <div class="container-fluid px-0">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <a href="img/foto_hrama_krest.jpg" data-fancybox="gallery" data-caption="Освящение креста">
+                                <img src="img/foto_hrama_krest.jpg" style="width: 100%; height: 280px; object-fit: cover; border-radius: 8px; display: block;">
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="img/foto_hrama_krest1.jpg" data-fancybox="gallery" data-caption="Установка креста">
+                                <img src="img/foto_hrama_krest1.jpg" style="width: 100%; height: 280px; object-fit: cover; border-radius: 8px; display: block;">
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="img/foto_hrama_kupol.jpg" data-fancybox="gallery" data-caption="Установка купола">
+                                <img src="img/foto_hrama_kupol.jpg" style="width: 100%; height: 280px; object-fit: cover; border-radius: 8px; display: block;">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2020 КОЛОКОЛА -->
                 <h3 class="year-title">2020 год: Освящение звонницы</h3>
                 <div class="history-text">
-                    <p>7 декабря 2020 года настоятель храма Иверской иконы Божией Матери г. Липецка протоиерей Василий Бильчук в сослужении духовенства Христо-Рождественского кафедрального собора совершил чин освящения малой звонницы.</p>
-                    <p>7 колоколов были подарены храму депутатом Липецкого областного Совета депутатов Юрием Алексеевичем Костиным.</p>
+                    <p>7 декабря 2020 года настоятель храма совершил чин освящения малой звонницы. 7 колоколов были подарены храму депутатом Липецкого областного Совета депутатов Юрием Алексеевичем Костиным.</p>
                 </div>
                 <div class="history-img-block">
                     <div class="row">
-                        <div class="col-md-6 mb-3"><img src="img/foto_hrama_kolokola.jpg" class="history-img w-100"></div>
-                        <div class="col-md-6 mb-3"><img src="img/foto_hrama_kolokola1.jpg" class="history-img w-100"></div>
+                        <div class="col-md-6 mb-3">
+                            <a href="img/foto_hrama_kolokola.jpg" data-fancybox="gallery" data-caption="Освящение звонницы">
+                                <img src="img/foto_hrama_kolokola.jpg" class="history-img w-100">
+                            </a>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <a href="img/foto_hrama_kolokola1.jpg" data-fancybox="gallery" data-caption="Новые колокола">
+                                <img src="img/foto_hrama_kolokola1.jpg" class="history-img w-100">
+                            </a>
+                        </div>
                     </div>
                 </div>
 
+                <!-- 2023 НИЖНИЙ ХРАМ -->
                 <h3 class="year-title">2023 год: Малое освящение нижнего храма</h3>
                 <div class="history-text">
-                    <p>3 января 2023 года произошло ключевое событие в литургической жизни прихода. Высокопреосвященнейший Арсений, митрополит Липецкий и Задонский, совершил чин малого освящения и возглавил Божественную литургию в нижнем храме в честь Почаевской иконы Божией Матери.</p>
+                    <p>3 января 2023 года произошло ключевое событие. Высокопреосвященнейший Арсений, митрополит Липецкий и Задонский, совершил чин малого освящения и возглавил Божественную литургию в нижнем храме в честь Почаевской иконы Божией Матери.</p>
                 </div>
                 <div class="history-img-block">
                     <div class="row">
-                        <div class="col-md-6 mb-3"><img src="img/foto_hrama_osvyachenie.jpg" class="history-img w-100"></div>
-                        <div class="col-md-6 mb-3"><img src="img/foto_hrama_osvyaschenie3.jpg" class="history-img w-100"></div>
-                        <div class="col-md-12 mb-3"><img src="img/foto_hrama_osvyachenie4.jpg" class="history-img w-100"></div>
+                        <div class="col-md-6 mb-3">
+                            <a href="img/foto_hrama_osvyachenie.jpg" data-fancybox="gallery" data-caption="Освящение нижнего храма">
+                                <img src="img/foto_hrama_osvyachenie.jpg" class="history-img w-100">
+                            </a>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <a href="img/foto_hrama_osvyaschenie3.jpg" data-fancybox="gallery" data-caption="Литургия в нижнем храме">
+                                <img src="img/foto_hrama_osvyaschenie3.jpg" class="history-img w-100">
+                            </a>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <a href="img/foto_hrama_osvyachenie4.jpg" data-fancybox="gallery" data-caption="Прихожане на службе">
+                                <img src="img/foto_hrama_osvyachenie4.jpg" class="history-img w-100">
+                            </a>
+                        </div>
                     </div>
                 </div>
 
+                <!-- 2024 ВОСКРЕСНАЯ ШКОЛА -->
                 <h3 class="year-title">2024 год: Открытие Воскресной школы</h3>
                 <div class="history-text">
                     <p>22 сентября 2024 года была основана Воскресная школа при храме. Занятия проводятся раз в неделю по воскресеньям в аудитории нижнего храма.</p>
                 </div>
                 <div class="history-img-block">
+                     <a href="img/foto_shkoly.jpg" data-fancybox="gallery" data-caption="Воскресная школа">
                        <img src="img/foto_shkoly.jpg" alt="Воскресная школа" class="history-img" style="width: 100%; border-radius: 8px;">
-
+                     </a>
                 </div>
                 <div class="history-text text-center">
                     <p><a href="https://vk.com/video-159711768_456239107" target="_blank" class="btn btn-outline-primary">Смотреть видео ВКонтакте</a></p>
@@ -204,26 +247,12 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <!-- Подключаем скрипт галереи -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+      Fancybox.bind("[data-fancybox]", {
+        // Настройки галереи
+      });
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
