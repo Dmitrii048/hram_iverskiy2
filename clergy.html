@@ -8,9 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <!-- Подключаем стили для галереи (Fancybox) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Перейти к содержанию</a>
+
     <header>
         <div class="container">
             <div class="header-container">
@@ -30,6 +33,7 @@
             </div>
         </div>
     </header>
+
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container justify-content-center">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Открыть меню">
@@ -39,7 +43,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="about.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle active" href="about.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             О Храме
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -57,13 +61,16 @@
         </div>
     </nav>
     
+    <main id="main-content">
     <div class="container my-5 text-center">
         
         <h3 class="section-title">Настоятель храма</h3>
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8">
                 <div class="cleric-card">
-                    <img src="img/nastoyatel.png" alt="о. Василий" class="cleric-photo">
+                    <a href="img/nastoyatel.png" data-fancybox="gallery" data-caption="Протоиерей Василий Бильчук">
+                        <img src="img/nastoyatel.png" alt="о. Василий" class="cleric-photo">
+                    </a>
                     <div class="cleric-name">Протоиерей Василий Бильчук</div>
                     <div class="cleric-rank">
                         <div>Настоятель храма Иверской иконы Божией Матери<br>
@@ -80,7 +87,9 @@
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                 <div class="cleric-card">
-                    <img src="img/Likhosherst.jpg" class="cleric-photo">
+                    <a href="img/Likhosherst.jpg" data-fancybox="gallery" data-caption="Иерей Александр Лихошерст">
+                        <img src="img/Likhosherst.jpg" class="cleric-photo" alt="Иерей Александр">
+                    </a>
                     <div class="cleric-name">Иерей Александр Лихошерст</div>
                     <div class="cleric-rank">Священнослужитель храма</div>
                     <div class="cleric-bio">
@@ -92,7 +101,9 @@
             </div>
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                 <div class="cleric-card">
-                    <img src="img/pigilev.png" class="cleric-photo">
+                    <a href="img/pigilev.png" data-fancybox="gallery" data-caption="Иерей Павел Пигилев">
+                        <img src="img/pigilev.png" class="cleric-photo" alt="Иерей Павел">
+                    </a>
                     <div class="cleric-name">Иерей Павел Пигилев</div>
                     <div class="cleric-rank">Священнослужитель храма</div>
                     <div class="cleric-bio">
@@ -104,7 +115,9 @@
             </div>
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                 <div class="cleric-card">
-                    <img src="img/malcev.png" class="cleric-photo">
+                    <a href="img/malcev.png" data-fancybox="gallery" data-caption="Иерей Олег Мальцев">
+                        <img src="img/malcev.png" class="cleric-photo" alt="Иерей Олег">
+                    </a>
                     <div class="cleric-name">Иерей Олег Мальцев</div>
                     <div class="cleric-rank">Священнослужитель храма</div>
                     <div class="cleric-bio">
@@ -120,7 +133,9 @@
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8">
                 <div class="cleric-card">
-                    <img src="img/pigilev2.png" class="cleric-photo">
+                    <a href="img/pigilev2.png" data-fancybox="gallery" data-caption="Диакон Диомид Пигилев">
+                        <img src="img/pigilev2.png" class="cleric-photo" alt="Диакон Диомид">
+                    </a>
                     <div class="cleric-name">Диакон Диомид Пигилев</div>
                     <div class="cleric-rank">Священнослужитель храма</div>
                     <div class="cleric-bio">
@@ -132,7 +147,9 @@
             </div>
         </div>
 
+    </div> <!-- Закрыли container -->
     </main>
+    
     <footer>
         <div class="container">
             <div class="footer-inner">
@@ -145,13 +162,22 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    
+    <!-- Подключаем скрипт галереи -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+      Fancybox.bind("[data-fancybox]", {
+        // ЭТО ВАЖНО: Запрещаем галерее блокировать прокрутку страницы
+        hideScrollbar: false,
+        
+        // Дополнительная страховка: принудительно возвращаем прокрутку при закрытии
+        on: {
+            close: (fancybox, slide) => {
+                document.body.style.overflow = "visible";
+                document.body.style.overflowY = "auto";
+            }
+        }
+      });
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
