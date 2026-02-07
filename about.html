@@ -249,10 +249,20 @@
     <script src="js/main.js"></script>
     <!-- Подключаем скрипт галереи -->
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-    <script>
-      Fancybox.bind("[data-fancybox]", {
-        // Настройки галереи
-      });
-    </script>
+<script>
+  Fancybox.bind("[data-fancybox]", {
+    // ЭТО ВАЖНО: Запрещаем галерее блокировать прокрутку страницы
+    hideScrollbar: false,
+    
+    // Дополнительная страховка: принудительно возвращаем прокрутку при закрытии
+    on: {
+        close: (fancybox, slide) => {
+            document.body.style.overflow = "visible";
+            document.body.style.overflowY = "auto";
+        }
+    }
+  });
+</script>
 </body>
 </html>
+
