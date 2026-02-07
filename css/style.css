@@ -1080,6 +1080,23 @@ a:focus-visible, button:focus-visible, .nav-link:focus-visible, .dropdown-item:f
     height: 24px;
 }
 
+/* 1. Гарантируем, что галерея всегда поверх всего */
+.fancybox__container {
+    z-index: 10000 !important;
+}
+
+/* 2. Если галерея закрывается или закрыта — она должна исчезнуть */
+.fancybox__container:not(.is-visible) {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* 3. Убираем возможные отступы, которые галерея могла добавить к body */
+body.fancybox-active {
+    overflow: hidden !important;
+}
 
 
 
