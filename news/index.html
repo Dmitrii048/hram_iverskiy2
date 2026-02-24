@@ -1,0 +1,53 @@
+---
+layout: default
+title: Летопись школы "Купина" | Архив новостей Иверского храма
+description: Полный архив событий Воскресной школы "Купина". Летопись мероприятий, детских литургий, праздников и мастер-классов прихода Иверского храма г. Липецка.
+keywords: архив новостей воскресная школа, все новости Иверский храм, летопись школы Липецк, события микрорайон Елецкий
+---
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            
+            <div class="text-center mb-5">
+                <h2 class="page-title d-inline-block">Летопись школы</h2>
+                <p class="text-muted mt-3" style="font-size: 1.15rem; font-family: var(--font-body);">
+                    Полный архив мероприятий и новостей Воскресной школы «Купина»
+                </p>
+            </div>
+
+            <div class="news-list-container">
+                <!-- Цикл по всем новостям категории 'school' -->
+                {% assign school_posts = site.posts | where: "category", "school" %}
+                {% for post in school_posts %}
+                <article class="news-card">
+                    
+                    {% if post.image %}
+                    <a href="{{ site.baseurl }}{{ post.url }}" class="news-img-placeholder" style="background-image: url('{{ site.baseurl }}{{ post.image }}'); display: block; text-decoration: none;" aria-label="Читать новость: {{ post.title }}"></a>
+                    {% else %}
+                    <!-- Заглушка, если нет фото -->
+                    <a href="{{ site.baseurl }}{{ post.url }}" class="news-img-placeholder" style="background-image: url('{{ site.baseurl }}/img/hram_voskresnaya.jpg'); display: block; text-decoration: none;" aria-label="Читать новость: {{ post.title }}"></a>
+                    {% endif %}
+                    
+                    <div class="news-content">
+                        <div class="news-category">{{ post.date | date: "%d.%m.%Y" }}</div>
+                        <a href="{{ site.baseurl }}{{ post.url }}" class="news-title">{{ post.title }}</a>
+                        <div class="history-text mt-3" style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 0;">
+                            {{ post.excerpt | strip_html | truncatewords: 35 }}
+                        </div>
+                        <a href="{{ site.baseurl }}{{ post.url }}" class="btn-read-more mt-4">Читать статью полностью</a>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+
+            <!-- Кнопка возврата на главную страницу школы -->
+            <div class="text-center mt-5 pt-4 border-top">
+                <a href="{{ site.baseurl }}/school/" class="btn-outline-primary" style="font-size: 0.95rem;">
+                    ← Вернуться на главную страницу школы
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
