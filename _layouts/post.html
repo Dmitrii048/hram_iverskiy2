@@ -1,0 +1,122 @@
+---
+layout: default
+---
+
+<!-- Дополнительные стили только для чтения новостей -->
+<style>
+    .single-post-wrapper {
+        background: #fff;
+        border: 1px solid rgba(198, 166, 102, 0.2);
+        border-radius: 8px;
+        padding: 50px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+        margin-top: 30px;
+    }
+    .post-meta-date {
+        font-family: var(--font-heading);
+        font-size: 1.15rem;
+        color: var(--accent-gold);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+        display: block;
+    }
+    .post-main-title {
+        font-family: var(--font-heading);
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: var(--primary-text);
+        line-height: 1.2;
+        margin-bottom: 35px;
+    }
+    .post-cover-image {
+        width: 100%;
+        max-height: 550px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-bottom: 45px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    }
+    .post-body {
+        font-family: var(--font-body);
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: #333;
+        text-align: justify;
+    }
+    .post-body p { margin-bottom: 25px; }
+    
+    /* Оформление цитат в новости (если будут) */
+    .post-body blockquote {
+        background: #fffdf5;
+        border-left: 4px solid var(--accent-gold);
+        padding: 20px 30px;
+        font-style: italic;
+        margin: 30px 0;
+        border-radius: 0 4px 4px 0;
+    }
+    
+    @media (max-width: 768px) {
+        .single-post-wrapper { padding: 25px 15px; }
+        .post-main-title { font-size: 2rem; }
+    }
+</style>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            
+            <article class="single-post-wrapper">
+                
+                <!-- Шапка статьи -->
+                <div class="text-center">
+                    <span class="post-meta-date">{{ page.date | date: "%d.%m.%Y" }}</span>
+                    <h1 class="post-main-title">{{ page.title }}</h1>
+                </div>
+
+                <!-- Главное изображение -->
+                {% if page.image %}
+                <a href="{{ site.baseurl }}{{ page.image }}" data-fancybox="post-gallery" data-caption="{{ page.title }}">
+                    <img src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}" class="post-cover-image">
+                </a>
+                {% endif %}
+
+                <!-- Текст статьи (подтягивается из Markdown файла, написанного в админке) -->
+                <div class="post-body">
+                    {{ content }}
+                </div>
+
+                <!-- ГАЛЕРЕЯ СОБЫТИЯ (Выводится автоматически, если загружены фото в админке) -->
+                {% if page.gallery and page.gallery.size > 0 %}
+                <div class="mt-5 pt-4" style="border-top: 2px dashed rgba(198, 166, 102, 0.3);">
+                    <h3 class="text-center mb-4" style="font-family: var(--font-heading); color: var(--accent-gold); font-size: 2rem;">
+                        Фотолетопись
+                    </h3>
+                    
+                    <div class="row g-3">
+                        {% for photo in page.gallery %}
+                        <div class="col-md-4 col-sm-6 mb-3">
+                            <a href="{{ site.baseurl }}{{ photo.image }}" data-fancybox="post-gallery" data-caption="{{ page.title }}">
+                                <img src="{{ site.baseurl }}{{ photo.image }}" class="w-100 shadow-sm" alt="Фотография" style="height: 220px; object-fit: cover; border-radius: 4px; transition: transform 0.3s ease;">
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+
+            </article>
+
+            <!-- Кнопка "Назад" -->
+            <div class="text-center mt-5">
+                {% if page.category == 'school' %}
+                    <a href="{{ site.baseurl }}/school/news/" class="btn-outline-primary" style="padding: 12px 30px;">← Вернуться к летописи школы</a>
+                {% else %}
+                    <a href="{{ site.baseurl }}/" class="btn-outline-primary" style="padding: 12px 30px;">← Вернуться на главную</a>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</div>
