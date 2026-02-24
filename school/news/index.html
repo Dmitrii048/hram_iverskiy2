@@ -2,13 +2,14 @@
 layout: default
 title: Летопись школы «Купина» | Архив событий Иверского храма г. Липецка
 description: Полный архив мероприятий, праздников и духовных событий Воскресной школы Иверского храма. Летопись приходской жизни в микрорайоне Елецкий города Липецка.
-keywords: летопись воскресной школы, архив новостей Иверский храм, события Елецкий микрорайон Липецк, православные новости Липецк, история школы Купина
+keywords: летопись воскресной школы, архив новостей Иверский храм, события Елецкий микрорайон Липецк, православные новости Липецк, история школы Купина, Иверская церковь Липецк
 ---
 
 <div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-lg-10">
             
+            <!-- Шапка раздела -->
             <div class="text-center mb-5">
                 <h2 class="page-title d-inline-block">Летопись школы</h2>
                 <p class="text-muted mt-3" style="font-size: 1.15rem; font-family: var(--font-body);">
@@ -16,35 +17,51 @@ keywords: летопись воскресной школы, архив ново�
                 </p>
             </div>
 
-            <!-- Контейнер для вывода всех новостей из папки _posts -->
-            <div class="news-list-container">
-                {% assign school_posts = site.posts | where: "category", "school" %}
-                {% for post in school_posts %}
-                <article class="news-card">
-                    <!-- Блок изображения новости -->
-                    {% if post.image %}
-                    <a href="{{ site.baseurl }}{{ post.url }}" class="news-img-placeholder" style="background-image: url('{{ site.baseurl }}{{ post.image }}'); display: block; text-decoration: none;" aria-label="Открыть статью: {{ post.title }}"></a>
-                    {% else %}
-                    <a href="{{ site.baseurl }}{{ post.url }}" class="news-img-placeholder" style="background-image: url('{{ site.baseurl }}/img/hram_voskresnaya.jpg'); display: block; text-decoration: none;" aria-label="Открыть статью: {{ post.title }}"></a>
-                    {% endif %}
-                    
-                    <!-- Блок текстового содержания -->
-                    <div class="news-content">
-                        <span class="news-category">{{ post.date | date: "%d.%m.%Y" }}</span>
-                        <a href="{{ site.baseurl }}{{ post.url }}" class="news-title"><h3>{{ post.title }}</h3></a>
-                        <div class="history-text mt-3" style="font-size: 1.05rem; line-height: 1.7; color: #444; text-align: justify; margin-bottom: 0;">
-                            {{ post.excerpt | strip_html | truncatewords: 35 }}
+            {% assign school_posts = site.posts | where: "category", "school" %}
+            
+            {% if school_posts.size > 0 %}
+                <div class="news-list-container">
+                    {% for post in school_posts %}
+                    <article class="news-card">
+                        <!-- Визуальный блок новости -->
+                        <div class="news-img-placeholder-wrapper" style="overflow: hidden;">
+                            {% if post.image %}
+                            <a href="{{ site.baseurl }}{{ post.url }}" class="news-img-placeholder" style="background-image: url('{{ site.baseurl }}{{ post.image }}'); display: block; transition: transform 0.5s ease;" aria-label="Открыть статью: {{ post.title }}"></a>
+                            {% else %}
+                            <a href="{{ site.baseurl }}{{ post.url }}" class="news-img-placeholder" style="background-image: url('{{ site.baseurl }}/img/hram_voskresnaya.jpg'); display: block;" aria-label="Открыть статью: {{ post.title }}"></a>
+                            {% endif %}
                         </div>
-                        <a href="{{ site.baseurl }}{{ post.url }}" class="btn-read-more mt-4">Читать летопись целиком →</a>
-                    </div>
-                </article>
-                {% endfor %}
-            </div>
+                        
+                        <!-- Текстовый блок -->
+                        <div class="news-content">
+                            <span class="news-category" style="color: var(--accent-gold); font-weight: 700; font-size: 0.85rem; letter-spacing: 1px;">
+                                {{ post.date | date: "%d.%m.%Y" }}
+                            </span>
+                            <a href="{{ site.baseurl }}{{ post.url }}" class="news-title" style="text-decoration: none;">
+                                <h3 style="transition: color 0.3s ease;">{{ post.title }}</h3>
+                            </a>
+                            <div class="history-text mt-3" style="font-size: 1.05rem; line-height: 1.7; color: #444; text-align: justify; margin-bottom: 0;">
+                                <!-- Уменьшил до 28 слов для лучшей симметрии карточек -->
+                                {{ post.excerpt | strip_html | truncatewords: 28 }}
+                            </div>
+                            <a href="{{ site.baseurl }}{{ post.url }}" class="btn-read-more mt-4" style="font-weight: 600;">Читать летопись целиком →</a>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <!-- Состояние, если новостей еще нет -->
+                <div class="text-center py-5">
+                    <p class="text-muted italic" style="font-family: var(--font-body); font-size: 1.2rem;">
+                        В данный момент летопись пополняется новыми событиями.<br>Пожалуйста, загляните к нам чуть позже.
+                    </p>
+                </div>
+            {% endif %}
 
-            <!-- Навигация возврата -->
+            <!-- Кнопка возврата с улучшенным стилем -->
             <div class="text-center mt-5 pt-4" style="border-top: 1px solid rgba(198, 166, 102, 0.2);">
-                <a href="{{ site.baseurl }}/school/" class="btn-outline-primary" style="font-size: 0.95rem; padding: 12px 30px;">
-                    ← Вернуться к описанию Воскресной школы
+                <a href="{{ site.baseurl }}/school/" class="btn-outline-primary" style="font-size: 0.95rem; padding: 12px 35px; font-weight: 600;">
+                    ← Вернуться к главной странице школы
                 </a>
             </div>
 
