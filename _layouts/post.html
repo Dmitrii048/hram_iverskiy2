@@ -2,15 +2,16 @@
 layout: default
 ---
 
-<!-- Дополнительные стили только для чтения новостей -->
+<!-- Дополнительные стили исключительно для страницы чтения новости -->
 <style>
     .single-post-wrapper {
-        background: #fff;
+        background: #ffffff;
         border: 1px solid rgba(198, 166, 102, 0.2);
         border-radius: 8px;
         padding: 50px;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
-        margin-top: 30px;
+        margin-top: 20px;
+        margin-bottom: 40px;
     }
     .post-meta-date {
         font-family: var(--font-heading);
@@ -29,6 +30,7 @@ layout: default
         color: var(--primary-text);
         line-height: 1.2;
         margin-bottom: 35px;
+        border-bottom: none;
     }
     .post-cover-image {
         width: 100%;
@@ -42,24 +44,36 @@ layout: default
         font-family: var(--font-body);
         font-size: 1.15rem;
         line-height: 1.8;
-        color: #333;
+        color: #333333;
         text-align: justify;
     }
     .post-body p { margin-bottom: 25px; }
     
-    /* Оформление цитат в новости (если будут) */
+    .post-body h2, .post-body h3 {
+        font-family: var(--font-heading);
+        color: #000;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+    
+    /* Оформление цитат Святых Отцов или Евангелия в тексте */
     .post-body blockquote {
         background: #fffdf5;
         border-left: 4px solid var(--accent-gold);
-        padding: 20px 30px;
+        padding: 25px 35px;
         font-style: italic;
-        margin: 30px 0;
+        margin: 40px 0;
         border-radius: 0 4px 4px 0;
+        color: #444;
+        font-size: 1.25rem;
+        box-shadow: 0 4px 15px rgba(198, 166, 102, 0.05);
     }
     
     @media (max-width: 768px) {
-        .single-post-wrapper { padding: 25px 15px; }
-        .post-main-title { font-size: 2rem; }
+        .single-post-wrapper { padding: 30px 20px; }
+        .post-main-title { font-size: 2.2rem; }
+        .post-body { font-size: 1.05rem; }
     }
 </style>
 
@@ -75,30 +89,32 @@ layout: default
                     <h1 class="post-main-title">{{ page.title }}</h1>
                 </div>
 
-                <!-- Главное изображение -->
+                <!-- Главное изображение новости -->
                 {% if page.image %}
-                <a href="{{ site.baseurl }}{{ page.image }}" data-fancybox="post-gallery" data-caption="{{ page.title }}">
-                    <img src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}" class="post-cover-image">
-                </a>
+                <div class="history-img-block">
+                    <a href="{{ site.baseurl }}{{ page.image }}" data-fancybox="post-gallery" data-caption="{{ page.title }}">
+                        <img src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}" class="post-cover-image">
+                    </a>
+                </div>
                 {% endif %}
 
-                <!-- Текст статьи (подтягивается из Markdown файла, написанного в админке) -->
+                <!-- Основной текст статьи (подтягивается из редактора Markdown CMS) -->
                 <div class="post-body">
                     {{ content }}
                 </div>
 
-                <!-- ГАЛЕРЕЯ СОБЫТИЯ (Выводится автоматически, если загружены фото в админке) -->
+                <!-- ГАЛЕРЕЯ (Отрисовывается только если в админке добавлены дополнительные фото) -->
                 {% if page.gallery and page.gallery.size > 0 %}
-                <div class="mt-5 pt-4" style="border-top: 2px dashed rgba(198, 166, 102, 0.3);">
-                    <h3 class="text-center mb-4" style="font-family: var(--font-heading); color: var(--accent-gold); font-size: 2rem;">
-                        Фотолетопись
+                <div class="mt-5 pt-5" style="border-top: 1px solid rgba(198, 166, 102, 0.3);">
+                    <h3 class="text-center mb-4" style="font-family: var(--font-heading); color: var(--accent-gold); font-size: 2.2rem; font-weight: bold;">
+                        Фотолетопись события
                     </h3>
                     
                     <div class="row g-3">
                         {% for photo in page.gallery %}
                         <div class="col-md-4 col-sm-6 mb-3">
                             <a href="{{ site.baseurl }}{{ photo.image }}" data-fancybox="post-gallery" data-caption="{{ page.title }}">
-                                <img src="{{ site.baseurl }}{{ photo.image }}" class="w-100 shadow-sm" alt="Фотография" style="height: 220px; object-fit: cover; border-radius: 4px; transition: transform 0.3s ease;">
+                                <img src="{{ site.baseurl }}{{ photo.image }}" class="gallery-img w-100 shadow-sm" alt="Фотография с мероприятия" style="height: 240px; object-fit: cover; border-radius: 4px;">
                             </a>
                         </div>
                         {% endfor %}
@@ -108,12 +124,12 @@ layout: default
 
             </article>
 
-            <!-- Кнопка "Назад" -->
-            <div class="text-center mt-5">
+            <!-- Кнопка возврата (определяет, куда вернуть пользователя: в школу или на главную) -->
+            <div class="text-center mt-5 mb-3">
                 {% if page.category == 'school' %}
-                    <a href="{{ site.baseurl }}/school/news/" class="btn-outline-primary" style="padding: 12px 30px;">← Вернуться к летописи школы</a>
+                    <a href="{{ site.baseurl }}/school/news/" class="btn-outline-primary" style="padding: 14px 35px; font-weight: 600; font-size: 0.95rem;">← Вернуться к летописи школы</a>
                 {% else %}
-                    <a href="{{ site.baseurl }}/" class="btn-outline-primary" style="padding: 12px 30px;">← Вернуться на главную</a>
+                    <a href="{{ site.baseurl }}/" class="btn-outline-primary" style="padding: 14px 35px; font-weight: 600; font-size: 0.95rem;">← Вернуться на главную страницу</a>
                 {% endif %}
             </div>
 
