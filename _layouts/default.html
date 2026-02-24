@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: "Храм Иверской иконы Божией Матери г. Липецка" }}</title>
+    <meta name="description" content="{{ page.description | default: 'Официальный сайт храма Иверской иконы Божией Матери в микрорайоне Елецкий города Липецка.' }}">
+    
+    <link rel="icon" type="image/png" href="{{ site.baseurl }}/img/logo.png">
+    
+    <!-- Шрифты (Cormorant Garamond для заголовков, Lora для текста) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap и стили галереи -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    
+    <!-- Твой основной файл стилей -->
+    <link href="{{ site.baseurl }}/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Перейти к содержанию</a>
+
+    <!-- ШАПКА САЙТА -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo-area">
+                    <a href="{{ site.baseurl }}/">
+                        <img src="{{ site.baseurl }}/img/logo.png" alt="Логотип Иверского храма" class="logo-img">
+                    </a>
+                </div>
+                <div class="church-info">
+                    <h1>Храм Иверской иконы <br>Божией Матери</h1>
+                    <p>г. Липецк, микрорайон Елецкий</p>
+                    <p class="church-sub">Московский Патриархат, Липецкая митрополия</p>
+                </div>
+                <div class="header-right">
+                    <div class="header-contact-block">
+                        <p class="header-contact header-contact--address"><span class="header-contact-label">Адрес:</span> г. Липецк, ул. Артемова, 8</p>
+                        <p class="header-contact header-contact--phone"><span class="header-contact-label">Тел.:</span> <a href="tel:+79205070706">+7 (920) 507-07-06</a></p>
+                        <p class="header-contact header-contact--email"><span class="header-contact-label">Почта:</span> <a href="mailto:iversky48@yandex.ru">iversky48@yandex.ru</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- НАВИГАЦИОННОЕ МЕНЮ -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container justify-content-center">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Открыть меню">
+                <span class="nav-toggler-text">Меню</span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/">Главная</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            О Храме
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ site.baseurl }}/about.html">История храма</a></li>
+                            <li><a class="dropdown-item" href="{{ site.baseurl }}/clergy.html">Духовенство</a></li>
+                            <li><a class="dropdown-item" href="{{ site.baseurl }}/school/">Воскресная школа</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/donations.html">Пожертвования</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/schedule.html">Расписание Богослужений</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ (Сюда подставляются страницы и новости) -->
+    <main id="main-content">
+        {{ content }}
+    </main>
+
+    <!-- ПОДВАЛ (ФУТЕР) -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-block">
+                    <h6>Навигация</h6>
+                    <p><a href="{{ site.baseurl }}/about.html">О храме</a></p>
+                    <p><a href="{{ site.baseurl }}/school/">Воскресная школа</a></p>
+                    <p><a href="{{ site.baseurl }}/schedule.html">Расписание</a></p>
+                </div>
+                <div class="footer-block">
+                    <h6>Контакты</h6>
+                    <p>ул. Артемова, д. 8</p>
+                    <p><a href="tel:+79205070706">+7 (920) 507-07-06</a></p>
+                    <p><a href="mailto:iversky48@yandex.ru">iversky48@yandex.ru</a></p>
+                </div>
+                <div class="footer-block">
+                    <h6>Мы в соцсетях</h6>
+                    <p><a href="https://t.me/iverskij" target="_blank" rel="noopener">Telegram храма</a></p>
+                    <p><a href="https://t.me/sunschol" target="_blank" rel="noopener">Telegram школы</a></p>
+                    <p><a href="https://vk.com/iverskiichram" target="_blank" rel="noopener">ВКонтакте</a></p>
+                </div>
+            </div>
+            <p class="footer-copy">© 2026 Приход храма Иверской иконы Божией Матери г. Липецка.</p>
+        </div>
+    </footer>
+
+    <!-- СКРИПТЫ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+      try { Fancybox.unbind("[data-fancybox]"); } catch(e) {}
+      Fancybox.bind("[data-fancybox]", {
+        hideScrollbar: false,
+        on: {
+            close: (fancybox, slide) => {
+                document.body.style.overflow = "visible";
+                document.body.style.overflowY = "auto";
+            }
+        }
+      });
+    </script>
+</body>
+</html>
