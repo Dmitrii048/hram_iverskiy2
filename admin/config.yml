@@ -1,12 +1,12 @@
 backend:
   name: github
-  repo: Dmitrii048/hram_iverskiy2 # Твой точный репозиторий
-  branch: main # Главная ветка
+  repo: Dmitrii048/hram_iverskiy2
+  branch: main
+  site_domain: "xn----ctbinjcdb6ab6c3b.xn--p1ai" # Это punycode твоего домена иверский-храм.рф
 
-media_folder: "img/uploads" # Папка в репозитории для загрузки фото
-public_folder: "/img/uploads" # Путь для отображения фото на сайте
+media_folder: "img/uploads"
+public_folder: "/img/uploads"
 
-# Настройки для постов (новостей)
 collections:
   - name: "posts"
     label: "Новости и События"
@@ -17,15 +17,10 @@ collections:
       - { label: "Скрытое поле Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Заголовок новости", name: "title", widget: "string" }
       - { label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", date_format: "YYYY-MM-DD", time_format: "HH:mm:ss" }
-      - { label: "Раздел", name: "category", widget: "select", options: ["news", "school"], default: "news", hint: "Выберите 'school' для Воскресной школы или 'news' для общих новостей" }
-      
-      # Новое поле для SEO (Ключевые слова)
-      - { label: "SEO: Ключевые слова (через запятую)", name: "keywords", widget: "string", required: false, hint: "Например: праздник, крестный ход Липецк, Иверский храм" }
-      
+      - { label: "Раздел", name: "category", widget: "select", options: ["news", "school"], default: "news" }
+      - { label: "SEO Ключевые слова (через запятую)", name: "keywords", widget: "string", required: false }
       - { label: "Главное фото", name: "image", widget: "image", required: false }
       - { label: "Текст новости", name: "body", widget: "markdown" }
-      
-      # Галерея
       - label: "Фотогалерея (дополнительные фото)"
         name: "gallery"
         widget: "list"
