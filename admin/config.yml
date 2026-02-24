@@ -2,7 +2,8 @@ backend:
   name: github
   repo: Dmitrii048/hram_iverskiy2
   branch: main
-  site_domain: "xn----ctbinjcdb6ab6c3b.xn--p1ai" # Это punycode твоего домена иверский-храм.рф
+  # Временно выключаем домен для первого входа
+  # site_domain: "xn----ctbinjcdb6ab6c3b.xn--p1ai"
 
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
